@@ -30,7 +30,6 @@ import { combineHeaders, getDomainUrl } from './utils/misc.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
 import { type Theme, getTheme } from './utils/theme.server.ts'
 import { makeTimings } from './utils/timing.server.ts'
-import { getToast } from './utils/toast.server.ts'
 
 export const links: Route.LinksFunction = () => {
 	return [
@@ -144,7 +143,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 function App() {
 	const data = useLoaderData<typeof loader>()
 	const theme = useTheme()
-	useToast(data.toast)
 
 	return (
 		<>
@@ -167,7 +165,6 @@ function App() {
 					<ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
 				</div>
 			</div>
-			<EpicToaster closeButton position="top-center" theme={theme} />
 			<EpicProgress />
 		</>
 	)
