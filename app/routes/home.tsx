@@ -11,7 +11,6 @@ import YoutubeEmbed from "#app/components/youtubeEmbed.tsx";
 import crowbar from '../assets/crowbar.jpg';
 import huddle from '../assets/huddle.png';
 import stage from '../assets/stage.png';
-import getEvents from "../utils/bandsintown.server.ts"
 
 import { type Route } from './+types/home.ts'
 
