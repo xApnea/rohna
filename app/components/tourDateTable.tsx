@@ -6,7 +6,6 @@ interface Params {
 } // TODO: fix the events types
 
 export default function TourDateTable({ events = [] }: Params) {
-  console.log(events);
   return (
     <div role="table" id="tourDatesTable" className="w-11/12 lg:w-7/8 2xl:w-[1500px] py-4 px-3 md:p-8 text-white text-xs sm:text-sm md:text-lg border-solid border-2 border-white/15 rounded-xl bg-white/10 backdrop-blur-sm grid grid-cols-3 gap-3 md:gap-4 items-center">
       {
