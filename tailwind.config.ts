@@ -19,9 +19,11 @@ export default {
 		},
 		extend: {
 			...extendedTheme,
-			fontFamily: {
-				sans: ['var(--font-base)']
-			}
+      fontFamily: {
+        sans: [
+          "Archivo"
+        ],
+      },
 		},
 	},
 	plugins: [animatePlugin, radixPlugin],
