@@ -11,6 +11,7 @@ import getPort, { portNumbers } from 'get-port'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { type ServerBuild } from 'react-router'
+import router from './router.js'
 
 const MODE = process.env.NODE_ENV ?? 'development'
 const IS_PROD = MODE === 'production'
@@ -67,6 +68,8 @@ app.use(compression())
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
 app.disable('x-powered-by')
+
+app.use('/api', router);
 
 if (viteDevServer) {
 	app.use(viteDevServer.middlewares)
