@@ -12,13 +12,14 @@ export default function MailingListForm({ actionData }: any) {
                 name="email"
                 placeholder="email@rohna.com"
                 type="email"
+                autoComplete="email"
                 className="text-lg text-center w-full p-2 rounded-xl bg-white/10 outline-2 outline-white placeholder-white/50 hover:bg-white/20 transition-all duration-300 ease-in-out shadow-none hover:shadow-black/20 hover:shadow-md"
               />
             </label>
           </div>
           <div aria-hidden="true" className="absolute left-[-5000px]">
             {/* real people should not fill this in and expect good things */}
-            <input type="text" name="name" tabIndex={-1}></input>
+            <input type="text" name="name" tabIndex={-1} autoComplete="off"></input>
           </div>
         <button type="submit" className="text-white text-center uppercase font-bold text-xl mt-2 w-3/4 md:w-1/2 xl:w-1/3 2xl:w-1/4 py-2 md:text-xl rounded-2xl bg-orange transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/50 hover:shadow-lg hover:scale-105">Subscribe</button>
       </Form>
