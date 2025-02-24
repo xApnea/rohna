@@ -1,4 +1,3 @@
-
 import {
 	data,
 	Link,
@@ -61,7 +60,6 @@ export const meta: Route.MetaFunction = ({ data }) => {
 export async function loader({ request }: Route.LoaderArgs) {
 	const timings = makeTimings('root loader')
 
-	const { toast, headers: toastHeaders } = await getToast(request)
 	const honeyProps = await honeypot.getInputProps()
 
 	return data(
@@ -75,13 +73,11 @@ export async function loader({ request }: Route.LoaderArgs) {
 				},
 			},
 			ENV: getEnv(),
-			toast,
 			honeyProps,
 		},
 		{
 			headers: combineHeaders(
 				{ 'Server-Timing': timings.toString() },
-				toastHeaders,
 			),
 		},
 	)
