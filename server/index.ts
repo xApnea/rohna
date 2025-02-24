@@ -134,7 +134,7 @@ app.use(
 					"'self'",
 				].filter(Boolean),
 				'font-src': ["'self'"],
-				'frame-src': ["'self'"],
+				'frame-src': ["'self'", "https://open.spotify.com/", "https://www.youtube-nocookie.com/"],
 				'img-src': ["'self'", 'data:'],
 				'script-src': [
 					"'strict-dynamic'",
