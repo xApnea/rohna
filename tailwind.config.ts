@@ -8,12 +8,15 @@ export default {
 	content: ['./app/**/*.{ts,tsx,jsx,js}'],
 	darkMode: 'class',
 	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px',
-			},
+		colors: {
+			transparent: 'transparent',
+      current: 'currentColor',
+      orange: '#B94E10',
+      orangeLight: '#ed732c',
+      white: '#f9f5e6',
+      black: '#000000',
+      brown: '#302B28',
+      green: '#38564b'
 		},
 		extend: extendedTheme,
 	},
