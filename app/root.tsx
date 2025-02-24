@@ -15,11 +15,7 @@ import faviconAssetUrl from './assets/favicons/favicon.svg'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import { EpicProgress } from './components/progress-bar.tsx'
 import { href as iconsHref } from './components/ui/icon.tsx'
-import {
-	ThemeSwitch,
-	useOptionalTheme,
-	useTheme,
-} from './routes/resources+/theme-switch.tsx'
+import fontStyleSheetUrl from './styles/archivo.css?url'
 import tailwindStyleSheetUrl from './styles/tailwind.css?url'
 import { ClientHintCheck, getHints } from './utils/client-hints.tsx'
 import { getEnv } from './utils/env.server.ts'
@@ -27,13 +23,14 @@ import { pipeHeaders } from './utils/headers.server.ts'
 import { honeypot } from './utils/honeypot.server.ts'
 import { combineHeaders, getDomainUrl } from './utils/misc.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
-import { type Theme, getTheme } from './utils/theme.server.ts'
 import { makeTimings } from './utils/timing.server.ts'
 
 export const links: Route.LinksFunction = () => {
 	return [
 		// Preload svg sprite as a resource to avoid render blocking
 		{ rel: 'preload', href: iconsHref, as: 'image' },
+		{ rel: 'preload', href: fontStyleSheetUrl, as: 'style' },
+		{ rel: 'stylesheet', href: fontStyleSheetUrl },
 		{
 			rel: 'icon',
 			href: '/favicon.ico',
@@ -68,9 +65,6 @@ export async function loader({ request }: Route.LoaderArgs) {
 				hints: getHints(request),
 				origin: getDomainUrl(request),
 				path: new URL(request.url).pathname,
-				userPrefs: {
-					theme: getTheme(request),
-				},
 			},
 			ENV: getEnv(),
 			honeyProps,
@@ -88,17 +82,15 @@ export const headers: Route.HeadersFunction = pipeHeaders
 function Document({
 	children,
 	nonce,
-	theme = 'light',
 	env = {},
 }: {
 	children: React.ReactNode
 	nonce: string
-	theme?: Theme
 	env?: Record<string, string | undefined>
 }) {
 	const allowIndexing = ENV.ALLOW_INDEXING !== 'false'
 	return (
-		<html lang="en" className={`${theme} h-full overflow-x-hidden`}>
+		<html lang="en">
 			<head>
 				<ClientHintCheck nonce={nonce} />
 				<Meta />
@@ -109,7 +101,7 @@ function Document({
 				)}
 				<Links />
 			</head>
-			<body className="bg-background text-foreground">
+			<body className="">
 				{children}
 				<script
 					nonce={nonce}
@@ -128,54 +120,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	// if there was an error running the loader, data could be missing
 	const data = useLoaderData<typeof loader | null>()
 	const nonce = useNonce()
-	const theme = useOptionalTheme()
 	return (
-		<Document nonce={nonce} theme={theme} env={data?.ENV}>
+		<Document nonce={nonce} env={data?.ENV}>
 			{children}
 		</Document>
 	)
 }
 
 function App() {
-	const data = useLoaderData<typeof loader>()
-	const theme = useTheme()
-
 	return (
 		<>
-			<div className="flex min-h-screen flex-col justify-between">
-				<header className="container py-6">
-					<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
-						<Logo />
-						<div className="flex items-center gap-10">
-							<Link to="/">Home</Link>
-						</div>
-					</nav>
-				</header>
-
-				<div className="flex-1">
-					<Outlet />
-				</div>
-
-				<div className="container flex justify-between pb-5">
-					<Logo />
-					<ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
-				</div>
-			</div>
+			<Outlet />
 			<EpicProgress />
 		</>
-	)
-}
-
-function Logo() {
-	return (
-		<Link to="/" className="group grid leading-snug">
-			<span className="font-light transition group-hover:-translate-x-1">
-				epic
-			</span>
-			<span className="font-bold transition group-hover:translate-x-1">
-				notes
-			</span>
-		</Link>
 	)
 }
 

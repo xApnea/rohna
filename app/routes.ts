@@ -1,20 +1,11 @@
-import { type RouteConfig } from '@react-router/dev/routes'
-import { remixRoutesOptionAdapter } from '@react-router/remix-routes-option-adapter'
-import { flatRoutes } from 'remix-flat-routes'
+import { type RouteConfig, index, layout, route } from "@react-router/dev/routes";
 
-export default remixRoutesOptionAdapter((defineRoutes) => {
-	return flatRoutes('routes', defineRoutes, {
-		ignoredRouteFiles: [
-			'.*',
-			'**/*.css',
-			'**/__*.*',
-			// This is for server-side utilities you want to colocate
-			// next to your routes without making an additional
-			// directory. If you need a route that includes "server" or
-			// "client" in the filename, use the escape brackets like:
-			// my-route.[server].tsx
-			'**/*.server.*',
-			'**/*.client.*',
-		],
-	})
-}) satisfies RouteConfig
+export default [
+  index("routes/home.tsx"),
+  layout("layouts/main.tsx", [
+    route("tour", "routes/tour.tsx"),
+    route("presskit", "routes/presskit.tsx"),
+    route("about", "routes/about.tsx"),
+    route("contact", "routes/contact.tsx"),
+  ]),
+] satisfies RouteConfig;

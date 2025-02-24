@@ -1,7 +1,6 @@
 import { type Config } from 'tailwindcss'
 import animatePlugin from 'tailwindcss-animate'
 import radixPlugin from 'tailwindcss-radix'
-import { marketingPreset } from './app/routes/_marketing+/tailwind-preset'
 import { extendedTheme } from './app/utils/extended-theme.ts'
 
 export default {
@@ -18,8 +17,12 @@ export default {
       brown: '#302B28',
       green: '#38564b'
 		},
-		extend: extendedTheme,
+		extend: {
+			...extendedTheme,
+			fontFamily: {
+				sans: ['var(--font-base)']
+			}
+		},
 	},
-	presets: [marketingPreset],
 	plugins: [animatePlugin, radixPlugin],
 } satisfies Config

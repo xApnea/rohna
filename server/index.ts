@@ -77,6 +77,12 @@ if (viteDevServer) {
 		express.static('build/client/assets', { immutable: true, maxAge: '1y' }),
 	)
 
+	app.use(
+		'/fonts',
+		// Can aggressively cache fonts as they don't change often
+		express.static('public/fonts', { immutable: true, maxAge: '1y' }),
+ )
+
 	// Everything else (like favicon.ico) is cached for an hour. You may want to be
 	// more aggressive with this caching.
 	app.use(express.static('build/client', { maxAge: '1h' }))

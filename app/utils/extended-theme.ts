@@ -25,6 +25,14 @@ export const extendedTheme = {
 		'fadeIn': {
 			'0%': { opacity: '0' },
 			'100%': { opacity: '1' }
+		},
+		'grow': {
+			'0%': { scale: '0' },
+			'100%': { scale: '100%' }
+		},
+		'halfSpin': {
+			'0%': { transform: 'rotate(0deg)' },
+			'100%': { transform: 'rotate(180deg) '}
 		}
 	},
 	animation: {
