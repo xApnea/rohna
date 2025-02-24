@@ -1,8 +1,8 @@
+import { Icon } from '#app/components/ui/icon.js';
 import bandLadder from '../assets/bandLadder.jpg';
 import crowd from '../assets/crowd.jpg';
 import Performances from '../components/performances.jsx';
 import YoutubeEmbed from '../components/youtubeEmbed.jsx';
-import { Icon } from '#app/components/ui/icon.js';
 
 
 export default function PressKit() {
