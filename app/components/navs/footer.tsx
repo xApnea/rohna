@@ -1,3 +1,5 @@
+import SocialIcons from "../ui/socials";
+
 export default function Footer() {
   return (
     <footer className="pt-4 pb-1 md:pb-4 px-2 md:px-8 text-white/70 bg-brown">
@@ -9,7 +11,7 @@ export default function Footer() {
           All Rights Reserved
         </p>
         <div className="hidden md:flex flex-row justify-center items-center gap-4">
-          {/* <SocialIcons /> */}
+          <SocialIcons />
         </div>
         <p className="text-right">
           &copy; 2025 Rohna Music LLC
