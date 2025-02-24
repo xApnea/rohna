@@ -24,7 +24,7 @@ export default function About() {
   ]
 
   return (
-    <div id="about" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-172px)] lg:min-h-[calc(100svh-183px)] bg-[url('./assets/eclipse.png')] bg-cover bg-center">
+    <div id="about" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-172px)] lg:min-h-[calc(100svh-183px)] bg-[url('../assets/eclipse.png')] bg-cover bg-center">
       <h1 className="text-center py-8 md:py-16 text-5xl md:text-7xl md:text-left md:pl-8 font-extrabold uppercase bg-gradient-to-b from-green via-green/50">About Us</h1>
       <div className="flex flex-col justify-center md:flex-row md:justify-between md:items-center">
         <div className="w-full p-8 md:my-0">
