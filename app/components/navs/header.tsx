@@ -14,7 +14,7 @@ export default function Header({ onHomePage = false}) {
 
   return(
     <header id="header" className={`py-4 md:py-8 ${onHomePage ? 'absolute top-0 inset-x-0 z-10' : 'bg-green'} ${onHomePage && isMenuOpen && 'bg-green'}`}>
-      <nav className='flex flex-row justify-between items-center font-bold text-lg px-8 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white'>
+      <nav className='flex flex-row justify-between items-center font-bold text-lg px-4 sm:px-8 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white'>
         <Link className='transition-all duration-150 ease-in-out hover:scale-105' to={'/'}>
           <Logo sizes="w-[75px] h-[22px] md:w-[150px] md:h-[44px] lg:w-[187px] lg:h-[55px]"/>
         </Link>
@@ -37,10 +37,11 @@ export default function Header({ onHomePage = false}) {
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
           to={'contact'}
         >CONTACT</NavLink>
-        <button className={`size-6 md:size-8 lg:hidden cursor-pointer ease-in-out hover:scale-105 ${effect && 'animate-[halfSpin_.1s;]'}`} onClick={() => handleClick()} onAnimationEnd={() => setEffect(false)}>
+        <button className="flex items-center gap-2 sm:gap-3 lg:hidden cursor-pointer ease-in-out hover:scale-105" onClick={() => handleClick()}>
+          {isMenuOpen ? '' : 'MENU'}
           {isMenuOpen
-            ? <Icon name="x" size="xl" title="Close Menu" />
-            : <Icon name="menu" size="xl" title="Menu" />
+            ? <Icon className={`${effect && 'animate-[halfSpin_.1s;]'}`} onAnimationEnd={() => setEffect(false)} name="x" size="lg" title="Close Menu"></Icon>
+            : <Icon className={`${effect && 'animate-[halfSpin_.1s;]'}`} onAnimationEnd={() => setEffect(false)} name="menu" size="lg" title="Open Menu"></Icon>
           }
         </button>
 

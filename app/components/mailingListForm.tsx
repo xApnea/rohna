@@ -10,7 +10,7 @@ export default function MailingListForm({ actionData }: any) {
               <input
                 defaultValue=""
                 name="email"
-                placeholder="email@rohna.com"
+                placeholder="email@example.com"
                 type="email"
                 autoComplete="email"
                 className="text-lg text-center w-full p-2 rounded-xl bg-white/10 outline-2 outline-white placeholder-white/50 hover:bg-white/20 transition-all duration-300 ease-in-out shadow-none hover:shadow-black/20 hover:shadow-md"

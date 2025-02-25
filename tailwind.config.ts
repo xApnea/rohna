@@ -21,7 +21,8 @@ export default {
 			...extendedTheme,
       fontFamily: {
         sans: [
-          "Archivo"
+          "Archivo",
+          "Archivo Fallback"
         ],
       },
 		},
