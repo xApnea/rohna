@@ -53,6 +53,7 @@
     "@tusbar/cache-control": "1.0.2",
     "@types/express": "^5.0.0",
     "@types/luxon": "^3.4.2",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "address": "^2.0.3",
     "axios": "^1.7.9",
     "chalk": "^5.4.1",
