@@ -29,14 +29,14 @@ export function ErrorBoundary() {
 		<GeneralErrorBoundary
 			statusHandlers={{
 				404: () => (
-					<div className="flex flex-col gap-6">
+					<div className="flex flex-col gap-16 h-svh">
 						<div className="flex flex-col gap-3">
-							<h1>We can't find this page:</h1>
+							<h1 className="text-xl">We can't find this page:</h1>
 							<pre className="whitespace-pre-wrap break-all text-body-lg">
 								{location.pathname}
 							</pre>
 						</div>
-						<Link to="/" className="text-body-md underline">
+						<Link to="/" className="text-5xl underline ease-in-out hover:scale-105">
 							<Icon name="arrow-left">Back to home</Icon>
 						</Link>
 					</div>

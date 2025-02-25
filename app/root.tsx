@@ -13,7 +13,6 @@ import { type Route } from './+types/root.ts'
 import appleTouchIconAssetUrl from './assets/favicons/apple-touch-icon.png'
 import faviconAssetUrl from './assets/favicons/favicon.svg'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
-import { EpicProgress } from './components/progress-bar.tsx'
 import { href as iconsHref } from './components/ui/icon.tsx'
 import fontStyleSheetUrl from './styles/archivo.css?url'
 import tailwindStyleSheetUrl from './styles/tailwind.css?url'
@@ -49,8 +48,8 @@ export const links: Route.LinksFunction = () => {
 
 export const meta: Route.MetaFunction = ({ data }) => {
 	return [
-		{ title: data ? 'Epic Notes' : 'Error | Epic Notes' },
-		{ name: 'description', content: `Your own captain's log` },
+		{ title: data ? 'Rohna' : 'Error | Rohna' },
+		{ name: 'description', content: `Tampa Indie Band Rohna` },
 	]
 }
 
