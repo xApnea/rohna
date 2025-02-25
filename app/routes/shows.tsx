@@ -1,7 +1,7 @@
 import axios from 'axios';
 import TourDateTable from '../components/tourDateTable.jsx';
 
-import { type Route } from './+types/tour.ts'
+import { type Route } from './+types/shows.ts'
 
 export function meta() {
   return [
