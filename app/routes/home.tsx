@@ -71,7 +71,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
             <span className="relative inline-flex">
               <button className="text-white text-center uppercase font-bold text-xl px-24 py-4 md:text-3xl md:py-4 md:px-36 rounded-2xl bg-orange transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/50  hover:shadow-lg hover:scale-105" type="submit" onClick={() => { location.href = 'https://rohnamusic.tunelink.to/dont-come-down'; }}>Listen Here</button>
             </span>
-            <div className="flex flex-row justify-center items-center gap-4"><SocialIcons /></div>
+            <div className="flex flex-row justify-center items-center gap-4"><SocialIcons size="xl"/></div>
           </div>
         </div>
       </section>
