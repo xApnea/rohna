@@ -130,7 +130,7 @@ export default function PressKit() {
         <div className="text-base text-center font-normal m-8 lg:my-0 lg:w-1/2 md:5/8">
           <h2 className="pb-8 text-4xl font-bold">Contact Us</h2>
           <p className="italic">For all inquiries, email us at:</p>
-          <a className="block text-lg md:text-xl font-semibold underline cursor-pointer hover:scale-105" href="mailto:rohna.music@gmail.com">rohna.music@gmail.com</a>
+          <a className="block text-lg md:text-2xl font-semibold cursor-pointer transition-all hover:scale-105" href="mailto:rohna.music@gmail.com">rohna.music@gmail.com</a>
         </div>
       </section>
     </div>
