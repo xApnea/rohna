@@ -1,9 +1,10 @@
-import express, { Router } from 'express'
+import express from 'express'
 
 import getEvents from './bandsintown.js';
+//@ts-ignore
 import mailchimpSignup from './mailchimp.js';
 
-const router = Router();
+const router = express.Router();
 
 router.use(express.json());
 
@@ -16,7 +17,7 @@ router.post('/signup', async (req, res) => {
   try {
     const result = await mailchimpSignup(req.body);
     res.send(result)
-  } catch (error) {
+  } catch (error: any) {
     res.status(error.status).send({ message: error.detail, errors: error.errors });
   }
 });

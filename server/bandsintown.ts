@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getEvents = async function () {
+const getEvents = async function (): Promise<any> {
   const getEventsOptions = {
     method: 'get',
     url: 'https://rest.bandsintown.com/artists/rohna/events',
@@ -11,8 +11,9 @@ const getEvents = async function () {
   try {
     const response = await axios(getEventsOptions);
     return response.data;
-  } catch (err) {
+  } catch (err: any) {
     console.log(err.response);
+    throw err;
   }
 };
 

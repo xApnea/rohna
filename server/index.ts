@@ -11,7 +11,7 @@ import getPort, { portNumbers } from 'get-port'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { type ServerBuild } from 'react-router'
-import router from './router.js'
+import router  from './router.js'
 
 const MODE = process.env.NODE_ENV ?? 'development'
 const IS_PROD = MODE === 'production'
@@ -90,12 +90,6 @@ app.use(
 	// Can aggressively cache fonts as they don't change often
 	express.static('public/fonts', { immutable: true, maxAge: '1y' }),
 )
-
-app.get(['/img/*', '/favicons/*'], (_req, res) => {
-	// if we made it past the express.static for these, then we're missing something.
-	// So we'll just send a 404 and won't bother calling other middleware.
-	return res.status(404).send('Not found')
-})
 
 morgan.token('url', (req) => {
 	try {
