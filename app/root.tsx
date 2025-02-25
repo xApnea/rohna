@@ -117,7 +117,7 @@ function Document({
 				)}
 				<Links />
 			</head>
-			<body className="">
+			<body>
 				{children}
 				<script
 					nonce={nonce}
