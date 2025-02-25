@@ -13,6 +13,7 @@ const sizeClassName = {
 	md: 'w-5 h-5',
 	lg: 'w-6 h-6',
 	xl: 'w-7 h-7',
+	xxl: 'w-8 h-8'
 } as const
 
 type Size = keyof typeof sizeClassName
@@ -24,6 +25,7 @@ const childrenSizeClassName = {
 	md: 'gap-2',
 	lg: 'gap-2',
 	xl: 'gap-3',
+	xxl: 'gap-3'
 } satisfies Record<Size, string>
 
 /**
