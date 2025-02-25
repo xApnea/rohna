@@ -37,11 +37,11 @@ export default function Header({ onHomePage = false}) {
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
           to={'contact'}
         >CONTACT</NavLink>
-        <button className="flex items-center gap-4 lg:hidden cursor-pointer ease-in-out hover:scale-105" onClick={() => handleClick()}>
-          {isMenuOpen ? '' : 'Menu'}
+        <button className="flex items-center gap-2 sm:gap-3 lg:hidden cursor-pointer ease-in-out hover:scale-105" onClick={() => handleClick()}>
+          {isMenuOpen ? '' : 'MENU'}
           {isMenuOpen
-            ? <Icon className={`${effect && 'animate-[halfSpin_.1s;]'}`} onAnimationEnd={() => setEffect(false)} name="x" size="xxl" title="Close Menu"></Icon>
-            : <Icon className={`${effect && 'animate-[halfSpin_.1s;]'}`} onAnimationEnd={() => setEffect(false)} name="menu" size="xxl" title="Menu"></Icon>
+            ? <Icon className={`${effect && 'animate-[halfSpin_.1s;]'}`} onAnimationEnd={() => setEffect(false)} name="x" size="lg" title="Close Menu"></Icon>
+            : <Icon className={`${effect && 'animate-[halfSpin_.1s;]'}`} onAnimationEnd={() => setEffect(false)} name="menu" size="lg" title="Open Menu"></Icon>
           }
         </button>
 
