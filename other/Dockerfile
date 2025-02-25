@@ -57,10 +57,6 @@ ENV NODE_ENV="production"
 WORKDIR /myapp
 WORKDIR /myapp
 
-# Generate random value and save it to .env file which will be loaded by dotenv
-RUN INTERNAL_COMMAND_TOKEN=$(openssl rand -hex 32) && \
-  echo "INTERNAL_COMMAND_TOKEN=$INTERNAL_COMMAND_TOKEN" > .env
-
 COPY --from=production-deps /myapp/node_modules /myapp/node_modules
 
 COPY --from=build /myapp/server-build /myapp/server-build
