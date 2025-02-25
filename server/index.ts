@@ -64,6 +64,16 @@ app.get('*', (req, res, next) => {
 	}
 })
 
+// redirect www traffic to base domain
+app.use((req, res, next) => {
+	const host = getHost(req)
+	if (host.startsWith('www.')) {
+		return res.redirect(301, `https://${host.slice(4)}${req.url}`)
+	} else {
+		next()
+	}
+})
+
 app.use(compression())
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
