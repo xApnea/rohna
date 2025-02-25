@@ -75,12 +75,12 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
           </div>
         </div>
       </section>
-      <section id="newRelease" className="bg-green flex flex-col items-center py-8 md:py-12 animate-[fadeIn_2s;]">
-        <h2 className="text-white text-center py-12 text-5xl font-bold uppercase">New Release</h2>
+      <section id="newRelease" className="bg-green flex flex-col items-center py-8 md:py-10 animate-[fadeIn_2s;]">
+        <h2 className="text-white text-center py-10 text-5xl font-bold uppercase">New Release</h2>
         <YoutubeEmbed url={'M-ZrIAOr4Tw?si=Xh4lIM_j_d4rHrN0'}/>
       </section>
-      <section id="tour" className="bg-green flex flex-col items-center py-8 md:py-12 animate-[fadeIn_2s;]">
-        <h2 className="text-white text-center py-12 text-5xl font-bold uppercase">Tour Dates</h2>
+      <section id="tour" className="bg-green flex flex-col items-center py-8 md:py-10 animate-[fadeIn_2s;]">
+        <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Tour Dates</h2>
         <div role="table" id="tourDatesTable" className="w-11/12 lg:w-7/8 2xl:w-[1500px] py-4 px-3 md:p-8 text-white text-xs sm:text-sm md:text-lg border-solid border-2 border-white/15 rounded-xl bg-white/10 backdrop-blur-sm grid grid-cols-3 gap-3 md:gap-4 items-center">
           {
             events.map((event: any, index: number) => {
@@ -110,7 +110,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
           }
             </div>
       </section>
-      <section id="gallery" className="bg-[url('../assets/albumArtBackground.png')] bg-cover bg-center bg-no-repeat py-12 px-4 md:px-24">
+      <section id="gallery" className="bg-[url('../assets/albumArtBackground.png')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
           <div className="sm:col-span-2 sm:mb-8 lg:w-2/3">
             <img className="object-contain border-solid border-l-8 rounded-2xl border-green" src={huddle}></img>
@@ -123,7 +123,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
           </div>
         </div>
       </section>
-      <section id="mailingListForm" className="flex flex-col items-center py-12">
+      <section id="mailingListForm" className="flex flex-col items-center py-8 md:py-10">
         <h2 className="text-white text-center my-6 text-5xl font-bold uppercase">Subscribe</h2>
         <h3 className="mb-6 mx-1 md:mx-0 text-center text-sm md:text-med">Sign up for announcements, early merch drops and discounts, and other exclusive content.</h3>
         <MailingListForm actionData={actionData}/>
