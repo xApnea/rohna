@@ -4,6 +4,27 @@ import crowd from '../assets/crowd.jpg';
 import Performances from '../components/performances.jsx';
 import YoutubeEmbed from '../components/youtubeEmbed.jsx';
 
+export function meta() {
+  return [
+    { title: "Rohna | Press kit" },
+    {
+      name: "description",
+      content: "Discover Rohna - Tampa, Florida's rising Indie Alternative Rock band! Catch them live at a venue or festival near you as they take on some of the most iconic stages across the country. Stream and download their music on all platforms!",
+    },
+    {
+      property: "og:title",
+      content: "Rohna",
+    },
+    {
+      property: "og:site_name",
+      content: "Rohna",
+    },
+    {
+      property: "og:description",
+      content: "Discover Rohna - Tampa, Florida's rising Indie Alternative Rock band! Catch them live at a venue or festival near you as they take on some of the most iconic stages across the country. Stream and download their music on all platforms!",
+    },
+  ];
+}
 
 export default function PressKit() {
   return (

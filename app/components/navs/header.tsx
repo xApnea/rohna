@@ -20,14 +20,14 @@ export default function Header({ onHomePage = false}) {
         </Link>
         <NavLink
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
-          to={'tour'}
-        >TOUR</NavLink>
-        <Link className='hidden lg:block transition-all duration-150 ease-in-out hover:scale-105'
+          to={'shows'}
+        >SHOWS</NavLink>
+        {/* <Link className='hidden lg:block transition-all duration-150 ease-in-out hover:scale-105'
           to={'https://rohna-online-store.myshopify.com/'}
-        >MERCH</Link>
+        >MERCH</Link> */}
         <NavLink
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
-          to={'presskit'}
+          to={'epk'}
         >PRESS KIT</NavLink>
         <NavLink
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
@@ -48,17 +48,17 @@ export default function Header({ onHomePage = false}) {
         onClick={() => setIsMenuOpen(false)}>
           <NavLink
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
-            to={'tour'}
+            to={'shows'}
             onClick={() => setIsMenuOpen(false)}
-          >TOUR</NavLink>
-          <Link
+          >SHOWS</NavLink>
+          {/* <Link
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
             to={'https://rohna-online-store.myshopify.com/'}
             onClick={() => setIsMenuOpen(false)}
-          >MERCH</Link>
+          >MERCH</Link> */}
           <NavLink
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
-            to={'presskit'}
+            to={'epk'}
             onClick={() => setIsMenuOpen(false)}
           >PRESS KIT</NavLink>
           <NavLink
