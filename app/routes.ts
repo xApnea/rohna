@@ -7,5 +7,6 @@ export default [
     route("presskit", "routes/presskit.tsx"),
     route("about", "routes/about.tsx"),
     route("contact", "routes/contact.tsx"),
+    route("*", "routes/$.tsx")
   ]),
 ] satisfies RouteConfig;
