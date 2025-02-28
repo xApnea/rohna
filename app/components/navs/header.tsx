@@ -27,16 +27,16 @@ export default function Header({ onHomePage = false}) {
         >MERCH</Link> */}
         <NavLink
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
-          to={'epk'}
-        >PRESS KIT</NavLink>
-        <NavLink
-          className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
           to={'about'}
         >ABOUT</NavLink>
         <NavLink
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
           to={'contact'}
         >CONTACT</NavLink>
+        <NavLink
+          className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
+          to={'epk'}
+        >PRESS KIT</NavLink>
         <button className="flex items-center gap-2 sm:gap-3 lg:hidden cursor-pointer ease-in-out hover:scale-105" onClick={() => handleClick()}>
           {isMenuOpen ? '' : 'MENU'}
           {isMenuOpen
@@ -59,11 +59,6 @@ export default function Header({ onHomePage = false}) {
           >MERCH</Link> */}
           <NavLink
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
-            to={'epk'}
-            onClick={() => setIsMenuOpen(false)}
-          >PRESS KIT</NavLink>
-          <NavLink
-            className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
             to={'about'}
             onClick={() => setIsMenuOpen(false)}
           >ABOUT</NavLink>
@@ -72,6 +67,11 @@ export default function Header({ onHomePage = false}) {
             to={'contact'}
             onClick={() => setIsMenuOpen(false)}
           >CONTACT</NavLink>
+          <NavLink
+            className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
+            to={'epk'}
+            onClick={() => setIsMenuOpen(false)}
+          >PRESS KIT</NavLink>
         </div>
       </nav>
     </header>
