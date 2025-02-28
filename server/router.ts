@@ -1,6 +1,7 @@
 import express from 'express'
+import cache from 'memory-cache'
 
-import getEvents from './bandsintown.js';
+import getEvents from './bandsintown.ts';
 //@ts-ignore
 import mailchimpSignup from './mailchimp.js';
 
@@ -9,8 +10,17 @@ const router = express.Router();
 router.use(express.json());
 
 router.get('/events', async (req, res) => {
-  const response = await getEvents();
-  res.send(response);
+  const cachedEvents = cache.get('events')
+  if (cachedEvents) {
+    res.send(cachedEvents);
+  } else {
+    const events = await getEvents();
+
+    const ttl = 1000 * 60 * 60; // 1 hour
+    cache.put('events', events, ttl);
+
+    res.send(events);
+  }
 });
 
 router.post('/signup', async (req, res) => {
