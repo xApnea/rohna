@@ -10,4 +10,6 @@ export default [
     route("healthcheck", "routes/healthcheck.tsx"),
     route("*", "routes/$.tsx")
   ]),
+  route("sitemap.xml", "routes/seo/sitemap.xml.ts"),
+  route("robots.txt", "routes/seo/robots.txt.ts")
 ] satisfies RouteConfig;
