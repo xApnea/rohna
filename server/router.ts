@@ -1,7 +1,7 @@
 import express from 'express'
 import cache from 'memory-cache'
 
-import getEvents from './bandsintown.ts';
+import getEvents from './bandsintown.js';
 //@ts-ignore
 import mailchimpSignup from './mailchimp.js';
 
