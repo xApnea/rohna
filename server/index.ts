@@ -79,6 +79,15 @@ app.use(compression())
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
 app.disable('x-powered-by')
 
+// Redirects for pages from old website
+app.get('/bio', (req, res) => {
+	res.redirect(301, '/about')
+})
+
+app.get('/newmusic', (req, res) => {
+	res.redirect(302, '/')
+})
+
 app.use('/api', router);
 
 if (viteDevServer) {
@@ -129,8 +138,6 @@ app.use(
 		referrerPolicy: { policy: 'same-origin' },
 		crossOriginEmbedderPolicy: false,
 		contentSecurityPolicy: {
-			// NOTE: Remove reportOnly when you're ready to enforce this CSP
-			reportOnly: true,
 			directives: {
 				'connect-src': [
 					MODE === 'development' ? 'ws:' : null,

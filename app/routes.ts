@@ -7,7 +7,10 @@ export default [
     route("epk", "routes/presskit.tsx"),
     route("about", "routes/about.tsx"),
     route("contact", "routes/contact.tsx"),
-    route("healthcheck", "routes/healthcheck.tsx"),
     route("*", "routes/$.tsx")
   ]),
+  route("healthcheck", "routes/resources/healthcheck.tsx"),
+  route("img", "routes/resources/img.tsx"),
+  route("sitemap.xml", "routes/seo/sitemap.xml.ts"),
+  route("robots.txt", "routes/seo/robots.txt.ts")
 ] satisfies RouteConfig;

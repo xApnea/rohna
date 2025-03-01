@@ -1,16 +1,12 @@
 import axios from "axios";
-import { DateTime } from 'luxon';
-import { Fragment } from 'react'
+import { Img } from "openimg/react";
 
 import MailingListForm from "#app/components/mailingListForm.tsx";
 import Footer from "#app/components/navs/footer.tsx";
 import Header from "#app/components/navs/header.tsx";
+import TourDateTable from "#app/components/tourDateTable.tsx";
 import SocialIcons from "#app/components/ui/socials.tsx";
 import YoutubeEmbed from "#app/components/youtubeEmbed.tsx";
-
-import crowbar from '../assets/crowbar.jpg';
-import huddle from '../assets/huddle.png';
-import stage from '../assets/stage.png';
 
 import { type Route } from './+types/home.ts'
 
@@ -64,7 +60,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
     <>
       <Header onHomePage={true}/>
       <h1 className="sr-only">Home</h1>
-      <section className="bg-[url('../assets/bandPrism.jpg')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
+      <section className="bg-[url('/img/bandPrism.jpg')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
         <div id="hero" className="mx-auto pt-48 md:pt-80 bg-gradient-to-b from-green/60 via-transparent to-green to-95%">
           <div className="flex flex-col gap-6 justify-end items-center mt-36 mx-auto md:mt-80 2xl:mt-96">
             <h2 className="text-white md:text-2xl">New single &quot;Don&apos;t Come Down&quot; available now</h2>
@@ -81,45 +77,18 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
       </section>
       <section id="tour" className="bg-green flex flex-col items-center py-8 md:py-10 animate-[fadeIn_2s;]">
         <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Tour Dates</h2>
-        <div role="table" id="tourDatesTable" className="w-11/12 lg:w-7/8 2xl:w-[1500px] py-4 px-3 md:p-8 text-white text-xs sm:text-sm md:text-lg border-solid border-2 border-white/15 rounded-xl bg-white/10 backdrop-blur-sm grid grid-cols-3 gap-3 md:gap-4 items-center">
-          {
-            events.map((event: any, index: number) => {
-              const dt = DateTime.fromISO(event.datetime);
-              const date = dt.toLocaleString(DateTime.DATE_MED_WITH_WEEKDAY);
-
-              let callToAction;
-              if (event.offers.length === 0) {
-                callToAction = <button className="text-white font-bold uppercase py-1 px-2 md:text-base sm:px-4 md:px-8 justify-self-end bg-orange rounded-xl transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/20 hover:shadow-md hover:scale-105" type="submit" onClick={() => { location.href = `${event.url}&trigger=notify_me`; }}>Notify</button>;
-              } else {
-                callToAction = <button className="text-white font-bold uppercase py-1 px-2 md:text-base sm:px-4 md:px-8 bg-orange rounded-xl transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/20 hover:shadow-md hover:scale-105" type="submit" onClick={() => { location.href = event.offers[0].url; }}>Tickets</button>;
-              }
-
-              return (
-                <Fragment key={index}>
-                  <div className="justify-self-start text-left font-bold">{date}</div>
-                  <div className="justify-self-start text-left font-semibold">
-                    <p>{event.venue.location}</p>
-                    <p className="font-normal italic md:text-sm hidden md:inline">{event.venue.name}</p>
-                  </div>
-                  <div className="justify-self-center lg:justify-self-end text-center w-full md:w-1/2">
-                    {callToAction}
-                  </div>
-                </Fragment>
-              );
-            })
-          }
-            </div>
+        <TourDateTable events={events}/>
       </section>
-      <section id="gallery" className="bg-[url('../assets/albumArtBackground.png')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
+      <section id="gallery" className="bg-[url('/img/albumArtBackground.png')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
           <div className="sm:col-span-2 sm:mb-8 lg:w-2/3">
-            <img className="object-contain border-solid border-l-8 rounded-2xl border-green" src={huddle}></img>
+            <Img width="1440" height="1440" fit="contain" src="/huddle.png" className="rounded-2xl" alt="The band huddled around the drumkit right before a performance."></Img>
           </div>
-          <div className="sm:col-span-2 sm:mt-8 lg:w-2/3">
-            <img className="object-contain border-solid border-t-8 rounded-2xl border-green" src={crowbar}></img>
+          <div className="sm:col-span-2 sm:mt-8 lg:w-2/3 rounded-2xl">
+            <Img width="775" height="550" fit="contain" src="/crowbar.jpg" className="rounded-2xl" alt="Shot from behind the stage of the band performing."></Img>
           </div>
-          <div className="sm:col-span-4 sm:mx-12 lg:w-1/2">
-            <img className="object-contain border-solid border-r-8 rounded-2xl border-green" src={stage}></img>
+          <div className="sm:col-span-4 sm:mx-12 lg:w-1/2 rounded-2xl">
+            <Img width="4000" height="3000" fit="cover" src="/stage.png" className="rounded-2xl" alt="The band in front of a crowd performing, bass player Andres is headbanging."></Img>
           </div>
         </div>
       </section>
