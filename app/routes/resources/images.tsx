@@ -7,7 +7,7 @@ let cacheDir: string | null = null
 async function getCacheDir() {
 	if (cacheDir) return cacheDir
 
-	let dir = '/data/images'
+	let dir = './data/images'
 	if (process.env.NODE_ENV === 'production') {
 		const isAccessible = await fs
 			.access('/data', constants.W_OK)
@@ -49,5 +49,5 @@ export async function loader({ request }: Route.LoaderArgs) {
   const headers = new Headers();
   headers.set("Cache-Control", "public, max-age=31536000, immutable");
 
-  return getImgResponse(request, { headers, getImgSource });
+  return getImgResponse(request, { headers, cacheFolder: await getCacheDir(), getImgSource });
 }
