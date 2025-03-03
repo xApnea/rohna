@@ -20,7 +20,7 @@ export default function Contact() {
             width="1312"
             height="1312"
             fit="cover"
-            src="/images/duotoneFull.png"
+            src="/images/bandLampsDuotone.jpg"
             alt="Band grouped together surrounded by lamps, shot from above"
             className="rounded-2xl my-4 md:my-0 max-w-3/4 md:max-w-3/5 lg:max-w-1/2"
           >

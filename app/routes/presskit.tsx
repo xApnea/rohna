@@ -119,7 +119,7 @@ export default function PressKit() {
             width="3605"
             height="5199"
             fit="cover"
-            src="/images/crowd.jpg"
+            src="/images/houseOfBlues.jpg"
             alt="Band performing in front of a large crowd at the House of Blues in Orlando, FL."
             className="rounded-2xl"
           >
