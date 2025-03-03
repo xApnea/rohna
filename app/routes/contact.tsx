@@ -17,8 +17,8 @@ export default function Contact() {
         </div>
         <OpenImgContextProvider optimizerEndpoint="/resources/images">
           <Img
-            width="1312"
-            height="1312"
+            width="1000"
+            height="1000"
             fit="cover"
             src="/images/bandLampsDuotone.jpg"
             alt="Band grouped together surrounded by lamps, shot from above"

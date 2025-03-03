@@ -33,8 +33,8 @@ export default function PressKit() {
         <div className="xl:mx-8 w-full xl:w-1/2">
         <OpenImgContextProvider optimizerEndpoint="/resources/images">
           <Img
-            width="3059"
-            height="2367"
+            width="2000"
+            height="1548"
             fit="contain"
             src="/images/bandLadder.jpg"
             alt="Band grouped together around a wooden ladder, some members on the steps others are leaning against it."
@@ -116,8 +116,8 @@ export default function PressKit() {
         <div className="hidden xl:block xl:w-1/4">
         <OpenImgContextProvider optimizerEndpoint="/resources/images">
           <Img
-            width="3605"
-            height="5199"
+            width="800"
+            height="1000"
             fit="cover"
             src="/images/houseOfBlues.jpg"
             alt="Band performing in front of a large crowd at the House of Blues in Orlando, FL."

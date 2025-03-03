@@ -17,12 +17,12 @@ export default function About() {
   ]
 
   return (
-    <div id="about" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-172px)] lg:min-h-[calc(100svh-183px)] bg-[url('/resources/images?src=/images/albumArtEclipse.jpg&w=4000&h=4000&fit=cover&format=avif')] bg-cover bg-center">
+    <div id="about" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-172px)] lg:min-h-[calc(100svh-183px)] bg-[url('/resources/images?src=/images/albumArtEclipse.jpg&w=2000&h=2000&fit=cover&format=avif')] bg-cover bg-center">
       <h1 className="text-center py-8 md:py-16 text-5xl md:text-7xl md:text-left md:pl-8 font-extrabold uppercase bg-gradient-to-b from-green via-green/50">About Us</h1>
       <div className="flex flex-col justify-center md:flex-row md:justify-between md:items-center">
         <div className="w-full p-8 md:my-0">
           <OpenImgContextProvider optimizerEndpoint="/resources/images">
-          <Img width="2238" height="2238" fit="contain" src="/images/mustang.jpg" className="rounded-2xl w-full" alt="The band packed into a classic car."></Img>
+          <Img width="2000" height="2000" fit="contain" src="/images/mustang.jpg" className="rounded-2xl w-full" alt="The band packed into a classic car."></Img>
           </OpenImgContextProvider>
         </div>
         <div className="w-full px-8">
@@ -48,8 +48,8 @@ export default function About() {
                   <p className="font-normal text-base mb-4">{member.position}</p>
                   <OpenImgContextProvider optimizerEndpoint="/resources/images">
                     <Img
-                      width="2525"
-                      height="2865"
+                      width="800"
+                      height="1000"
                       fit="cover"
                       src={member.imgSrc}
                       alt={`Photo of Rohna member ${member.name}`}
