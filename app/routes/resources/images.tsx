@@ -49,5 +49,5 @@ export async function loader({ request }: Route.LoaderArgs) {
   const headers = new Headers();
   headers.set("Cache-Control", "public, max-age=31536000, immutable");
 
-  return getImgResponse(request, { headers, cacheFolder: await getCacheDir(), getImgSource });
+  return getImgResponse(request, { headers, cacheFolder: "no_cache", getImgSource });
 }
