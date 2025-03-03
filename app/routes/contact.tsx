@@ -1,4 +1,4 @@
-import { Img } from "openimg/react";
+import { Img, OpenImgContextProvider } from "openimg/react";
 
 export default function Contact() {
   return (
@@ -15,15 +15,17 @@ export default function Contact() {
             <a className="inline-block w-fit text-2xl font-bold hover:scale-105 transform transition-all cursor-pointer" href="sms:8136693877">813-669-3877</a>
           </div>
         </div>
-        <Img
-          width="1312"
-          height="1312"
-          fit="cover"
-          src="/duotoneFull.png"
-          alt="Band grouped together surrounded by lamps, shot from above"
-          className="rounded-2xl my-4 md:my-0 max-w-3/4 md:max-w-3/5 lg:max-w-1/2"
-        >
-        </Img>
+        <OpenImgContextProvider optimizerEndpoint="/resources/images">
+          <Img
+            width="1312"
+            height="1312"
+            fit="cover"
+            src="/images/duotoneFull.png"
+            alt="Band grouped together surrounded by lamps, shot from above"
+            className="rounded-2xl my-4 md:my-0 max-w-3/4 md:max-w-3/5 lg:max-w-1/2"
+          >
+          </Img>
+        </OpenImgContextProvider>
       </div>
     </section>
   );
