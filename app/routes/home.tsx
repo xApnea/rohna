@@ -60,7 +60,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
     <>
       <Header onHomePage={true}/>
       <h1 className="sr-only">Home</h1>
-      <section className="bg-[url('/img/bandPrism.jpg')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
+      <section className="bg-[url('/img?src=/bandPrism.jpg&w=2705&h=2048&fit=cover&format=avif')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
         <div id="hero" className="mx-auto pt-48 md:pt-80 bg-gradient-to-b from-green/60 via-transparent to-green to-95%">
           <div className="flex flex-col gap-6 justify-end items-center mt-36 mx-auto md:mt-80 2xl:mt-96">
             <h2 className="text-white md:text-2xl">New single &quot;Don&apos;t Come Down&quot; available now</h2>
@@ -79,7 +79,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
         <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Tour Dates</h2>
         <TourDateTable events={events}/>
       </section>
-      <section id="gallery" className="bg-[url('/img/albumArtBackground.png')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
+      <section id="gallery" className="bg-[url('/img?src=/albumArtBackground.png&w=2705&h=2048&fit=cover&format=avif')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
           <div className="sm:col-span-2 sm:mb-8 lg:w-2/3">
             <Img width="1440" height="1440" fit="contain" src="/huddle.png" className="rounded-2xl" alt="The band huddled around the drumkit right before a performance."></Img>
