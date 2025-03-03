@@ -121,9 +121,7 @@ app.use(
 	morgan('tiny', {
 		skip: (req, res) =>
 			res.statusCode === 200 &&
-			(req.url?.startsWith('/resources/note-images') ||
-				req.url?.startsWith('/resources/user-images') ||
-				req.url?.startsWith('/resources/healthcheck')),
+			(req.url?.startsWith('/resources/images') || req.url?.startsWith('/resources/healthcheck')),
 	}),
 )
 

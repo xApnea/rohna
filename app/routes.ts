@@ -9,8 +9,8 @@ export default [
     route("contact", "routes/contact.tsx"),
     route("*", "routes/$.tsx")
   ]),
-  route("healthcheck", "routes/resources/healthcheck.tsx"),
-  route("img", "routes/resources/img.tsx"),
+  route("resources/healthcheck", "routes/resources/healthcheck.tsx"),
+  route("resources/images", "routes/resources/images.tsx"),
   route("sitemap.xml", "routes/seo/sitemap.xml.ts"),
   route("robots.txt", "routes/seo/robots.txt.ts")
 ] satisfies RouteConfig;

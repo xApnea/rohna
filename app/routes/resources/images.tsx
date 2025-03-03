@@ -1,5 +1,26 @@
+import { promises as fs, constants } from 'node:fs'
 import { getImgResponse, type GetImgSourceArgs, type ImgSource } from "openimg/node";
-import  { type Route } from "./+types/img";
+import  { type Route } from "./+types/images";
+
+let cacheDir: string | null = null
+
+async function getCacheDir() {
+	if (cacheDir) return cacheDir
+
+	let dir = '/data/images'
+	if (process.env.NODE_ENV === 'production') {
+		const isAccessible = await fs
+			.access('/data', constants.W_OK)
+			.then(() => true)
+			.catch(() => false)
+
+		if (isAccessible) {
+			dir = '/data/images'
+		}
+	}
+
+	return (cacheDir = dir)
+}
 
 function getImgSource({ request }: GetImgSourceArgs): ImgSource | Response {
   const src = new URL(request.url).searchParams.get("src");
@@ -9,7 +30,6 @@ function getImgSource({ request }: GetImgSourceArgs): ImgSource | Response {
       statusText: 'Search param "src" must be set',
     });
   }
-
   // Retrieve image from filesystem (public folder)
   if (src.startsWith('/assets')) {
     // Files managed by Vite
@@ -21,12 +41,13 @@ function getImgSource({ request }: GetImgSourceArgs): ImgSource | Response {
   // Fallback to files in public folder
   return {
     type: 'fs',
-    path: './public/img' + src,
+    path: './public' + src,
   }
 }
 
-export function loader({ request }: Route.LoaderArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   const headers = new Headers();
   headers.set("Cache-Control", "public, max-age=31536000, immutable");
+
   return getImgResponse(request, { headers, getImgSource });
 }
