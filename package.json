@@ -65,7 +65,7 @@
     "luxon": "^3.5.0",
     "memory-cache": "^0.2.0",
     "morgan": "^1.10.0",
-    "openimg": "^0.5.1",
+    "openimg": "^0.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.1.5",
