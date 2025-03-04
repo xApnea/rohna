@@ -34,7 +34,7 @@ export default function Tour({ loaderData }: Route.ComponentProps) {
   const { events } = loaderData;
 
   return (
-    <section className="bg-[url('../assets/stageDuotone.png')] bg-cover bg-center bg-no-repeat min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-166px)] lg:min-h-[calc(100svh-177px)]">
+    <section className="bg-[url('../assets/images/crowbar03.jpg')] bg-cover bg-center bg-no-repeat min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-166px)] lg:min-h-[calc(100svh-177px)]">
       <div className="flex flex-col items-center bg-gradient-to-b from-green via-green/50">
         <h1 className="text-center py-8 md:py-16 text-5xl md:text-7xl font-extrabold uppercase">Tour Dates</h1>
         <h2 className="pb-4">our upcoming shows</h2>
