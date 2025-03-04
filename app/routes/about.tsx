@@ -7,6 +7,12 @@ import luca from '../assets/images/luca.jpg';
 import mustang from '../assets/images/mustang.jpg';
 import nick from '../assets/images/nick.jpg';
 
+export function meta() {
+  return [
+    { title: "Rohna | About" },
+  ];
+}
+
 export default function About() {
   const [isNickHover, setNickHover] = useState(false);
   const [isLucaHover, setLucaHover] = useState(false);

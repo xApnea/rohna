@@ -1,5 +1,11 @@
 import bandLampsDuotone from '../assets/images/bandLampsDuotone.jpg'
 
+export function meta() {
+  return [
+    { title: "Rohna | Contact" },
+  ];
+}
+
 export default function Contact() {
   return (
     <section id="contactUs" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-166px)] lg:min-h-[calc(100svh-177px)] bg-green text-white">
