@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Img, OpenImgContextProvider } from "openimg/react";
+
 
 import MailingListForm from "#app/components/mailingListForm.tsx";
 import Footer from "#app/components/navs/footer.tsx";
@@ -7,6 +7,10 @@ import Header from "#app/components/navs/header.tsx";
 import TourDateTable from "#app/components/tourDateTable.tsx";
 import SocialIcons from "#app/components/ui/socials.tsx";
 import YoutubeEmbed from "#app/components/youtubeEmbed.tsx";
+
+import crowbar01 from '../assets/images/crowbar01.jpg'
+import crowbar02 from '../assets/images/crowbar02.jpg'
+import crowbarHuddle from '../assets/images/crowbarHuddle.jpg'
 
 import { type Route } from './+types/home.ts'
 
@@ -60,7 +64,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
     <>
       <Header onHomePage={true}/>
       <h1 className="sr-only">Home</h1>
-      <section className="bg-[url('/resources/images?src=/images/bandPrism.jpg&w=2000&h=1514&fit=cover&format=avif')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
+      <section className="bg-[url('../assets/images/bandPrism.jpg')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
         <div id="hero" className="mx-auto pt-48 md:pt-80 bg-gradient-to-b from-green/60 via-transparent to-green to-95%">
           <div className="flex flex-col gap-6 justify-end items-center mt-36 mx-auto md:mt-80 2xl:mt-96">
             <h2 className="text-white md:text-2xl">New single &quot;Don&apos;t Come Down&quot; available now</h2>
@@ -79,22 +83,16 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
         <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Tour Dates</h2>
         <TourDateTable events={events}/>
       </section>
-      <section id="gallery" className="bg-[url('/resources/images?src=/images/albumArt.jpg&w=2000&h=2000&fit=cover&format=avif')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
+      <section id="gallery" className="bg-[url('../assets/images/albumArt.jpg')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
           <div className="sm:col-span-2 sm:mb-8 lg:w-2/3">
-          <OpenImgContextProvider optimizerEndpoint="/resources/images">
-            <Img width="2000" height="2000" fit="contain" src="/images/crowbarHuddle.jpg" className="rounded-2xl" alt="The band huddled around the drumkit right before a performance."></Img>
-          </OpenImgContextProvider>
+          <img className="object-contain rounded-2xl" src={crowbarHuddle} alt="The band huddled around the drumkit right before a performance."></img>
           </div>
           <div className="sm:col-span-2 sm:mt-8 lg:w-2/3 rounded-2xl">
-            <OpenImgContextProvider optimizerEndpoint="/resources/images">
-              <Img width="2000" height="1429" fit="contain" src="/images/crowbar02.jpg" className="rounded-2xl" alt="Shot from behind the stage of the band performing."></Img>
-            </OpenImgContextProvider>
+          <img className="object-contain rounded-2xl" src={crowbar02} alt="Shot from behind the stage of the band performing."></img>
           </div>
           <div className="sm:col-span-4 sm:mx-12 lg:w-1/2 rounded-2xl">
-          <OpenImgContextProvider optimizerEndpoint="/resources/images">
-            <Img width="2000" height="1429" fit="cover" src="/images/crowbar01.jpg" className="rounded-2xl" alt="The band in front of a crowd performing, bass player Andres is headbanging."></Img>
-          </OpenImgContextProvider>
+          <img className="object-contain rounded-2xl" src={crowbar01} alt="The band in front of a crowd performing, bass player Andres is headbanging."></img>
           </div>
         </div>
       </section>

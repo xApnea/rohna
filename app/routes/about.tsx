@@ -1,5 +1,11 @@
-import { Img, OpenImgContextProvider } from "openimg/react";
 import { useState } from 'react';
+
+import andres from '../assets/images/andres.jpg';
+import burd from '../assets/images/burd.jpg';
+import john from '../assets/images/john.jpg';
+import luca from '../assets/images/luca.jpg';
+import mustang from '../assets/images/mustang.jpg';
+import nick from '../assets/images/nick.jpg';
 
 export default function About() {
   const [isNickHover, setNickHover] = useState(false);
@@ -9,21 +15,19 @@ export default function About() {
   const [isJohnHover, setJohnHover] = useState(false);
 
   const bandMembersInfo = [
-    { name: "Nick Rovello", position: "Guitar/Vocals", imgSrc: "/images/nick.jpg", blurb: "Instagram brain rot connoisseur", enterHandler: () => setNickHover(true), leaveHandler: () => setNickHover(false), showBlurb: () => isNickHover ? 'block' : 'hidden'},
-    { name: "Luca Canalungo", position: "Drums/Vocals", imgSrc: "/images/luca.jpg", blurb: "2% blood olive oil content", enterHandler: () => setLucaHover(true), leaveHandler: () => setLucaHover(false), showBlurb: () => isLucaHover ? 'block' : 'hidden'},
-    { name: "Andres Hernandez", position: "Bass/Vocals", imgSrc: "/images/andres.jpg", blurb: "Indie king pin", enterHandler: () => setAndresHover(true), leaveHandler: () => setAndresHover(false), showBlurb: () => isAndresHover ? 'block' : 'hidden'},
-    { name: "Austin Burdi", position: "Guitar", imgSrc: "/images/burd.jpg", blurb: "Lifetime sportsbook winnings: $3.45", enterHandler: () => setBurdHover(true), leaveHandler: () => setBurdHover(false), showBlurb: () => isBurdHover ? 'block' : 'hidden'},
-    { name: "John Bruno", position: "Guitar/Vocals/Keys", imgSrc: "/images/john.jpg", blurb: "Reigning 80's glam rock trivia champion", enterHandler: () => setJohnHover(true), leaveHandler: () => setJohnHover(false), showBlurb: () => isJohnHover ? 'block' : 'hidden'},
+    { name: "Nick Rovello", position: "Guitar/Vocals", imgSrc: nick, blurb: "Instagram brain rot connoisseur", enterHandler: () => setNickHover(true), leaveHandler: () => setNickHover(false), showBlurb: () => isNickHover ? 'block' : 'hidden'},
+    { name: "Luca Canalungo", position: "Drums/Vocals", imgSrc: luca, blurb: "2% blood olive oil content", enterHandler: () => setLucaHover(true), leaveHandler: () => setLucaHover(false), showBlurb: () => isLucaHover ? 'block' : 'hidden'},
+    { name: "Andres Hernandez", position: "Bass/Vocals", imgSrc: andres, blurb: "Indie king pin", enterHandler: () => setAndresHover(true), leaveHandler: () => setAndresHover(false), showBlurb: () => isAndresHover ? 'block' : 'hidden'},
+    { name: "Austin Burdi", position: "Guitar", imgSrc: burd, blurb: "Lifetime sportsbook winnings: $3.45", enterHandler: () => setBurdHover(true), leaveHandler: () => setBurdHover(false), showBlurb: () => isBurdHover ? 'block' : 'hidden'},
+    { name: "John Bruno", position: "Guitar/Vocals/Keys", imgSrc: john, blurb: "Reigning 80's glam rock trivia champion", enterHandler: () => setJohnHover(true), leaveHandler: () => setJohnHover(false), showBlurb: () => isJohnHover ? 'block' : 'hidden'},
   ]
 
   return (
-    <div id="about" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-172px)] lg:min-h-[calc(100svh-183px)] bg-[url('/resources/images?src=/images/albumArtEclipse.jpg&w=2000&h=2000&fit=cover&format=avif')] bg-cover bg-center">
+    <div id="about" className="min-h-[calc(100svh-131px)] md:min-h-[calc(100svh-172px)] lg:min-h-[calc(100svh-183px)] bg-[url('/assets/images/albumArtEclipse.jpg')] bg-cover bg-center">
       <h1 className="text-center py-8 md:py-16 text-5xl md:text-7xl md:text-left md:pl-8 font-extrabold uppercase bg-gradient-to-b from-green via-green/50">About Us</h1>
       <div className="flex flex-col justify-center md:flex-row md:justify-between md:items-center">
         <div className="w-full p-8 md:my-0">
-          <OpenImgContextProvider optimizerEndpoint="/resources/images">
-          <Img width="2000" height="2000" fit="contain" src="/images/mustang.jpg" className="rounded-2xl w-full" alt="The band packed into a classic car."></Img>
-          </OpenImgContextProvider>
+          <img src={mustang} className="rounded-2xl w-full" alt="The band packed into a classic car."></img>
         </div>
         <div className="w-full px-8">
           <h2 className="text-4xl font-semibold">Bio</h2>
@@ -46,19 +50,14 @@ export default function About() {
                 <li key={index} className="flex flex-col items-left mt-8 md:mt-0 p-4 bg-brown rounded-xl">
                   <p className="font-semibold text-xl">{member.name}</p>
                   <p className="font-normal text-base mb-4">{member.position}</p>
-                  <OpenImgContextProvider optimizerEndpoint="/resources/images">
-                    <Img
-                      width="800"
-                      height="1000"
-                      fit="cover"
-                      src={member.imgSrc}
-                      alt={`Photo of Rohna member ${member.name}`}
-                      className="relative max-w-64 xl:max-w-48 2xl:max-w-80 rounded-xl object-contain"
-                      onMouseEnter={() => member.enterHandler()}
-                      onMouseLeave={() => member.leaveHandler()}
-                    >
-                    </Img>
-                  </OpenImgContextProvider>
+                  <img
+                    src={member.imgSrc}
+                    alt={`Photo of Rohna member ${member.name}`}
+                    className="relative max-w-64 xl:max-w-48 2xl:max-w-80 rounded-xl object-contain"
+                    onMouseEnter={() => member.enterHandler()}
+                    onMouseLeave={() => member.leaveHandler()}
+                  >
+                  </img>
                   {/* <p className={`font-normal absolute z-10 mt-2 max-w-60 lg:max-w-72 ${member.showBlurb()}`}>{member.blurb}</p> */}
                 </li>)
             })

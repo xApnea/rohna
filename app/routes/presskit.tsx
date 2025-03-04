@@ -1,5 +1,6 @@
-import { Img, OpenImgContextProvider } from 'openimg/react';
 import { Icon } from '#app/components/ui/icon.js';
+import bandLadder from '../assets/images/bandLadder.jpg';
+import houseOfBlues from '../assets/images/houseOfBlues.jpg';
 import Performances from '../components/performances.jsx';
 import YoutubeEmbed from '../components/youtubeEmbed.jsx';
 
@@ -31,16 +32,7 @@ export default function PressKit() {
       <h1 className="text-center py-8 lg:py-16 text-5xl lg:text-7xl lg:text-left lg:ml-8 font-extrabold uppercase">Press Kit</h1>
       <section id="bio" className='flex flex-col xl:flex-row items-center justify-center text-left mx-4 xl:mx-0 pt-8 pb-16'>
         <div className="xl:mx-8 w-full xl:w-1/2">
-        <OpenImgContextProvider optimizerEndpoint="/resources/images">
-          <Img
-            width="2000"
-            height="1548"
-            fit="contain"
-            src="/images/bandLadder.jpg"
-            alt="Band grouped together around a wooden ladder, some members on the steps others are leaning against it."
-            className="rounded-2xl"
-          />
-        </OpenImgContextProvider>
+        <img src={bandLadder} className="rounded-2xl object-contain" alt="Band grouped together around a wooden ladder, some members on the steps others are leaning against it."></img>
         </div>
         <div className="text-base font-normal m-8 xl:my-0 w-full xl:w-1/2">
           <h2 className="text-left pb-8 text-4xl font-bold">Bio</h2>
@@ -114,17 +106,7 @@ export default function PressKit() {
       </section>
       <section id="performances" className="py-16 mx-2 md:mx-8 flex flex-col xl:flex-row justify-evenly items-center">
         <div className="hidden xl:block xl:w-1/4">
-        <OpenImgContextProvider optimizerEndpoint="/resources/images">
-          <Img
-            width="800"
-            height="1000"
-            fit="cover"
-            src="/images/houseOfBlues.jpg"
-            alt="Band performing in front of a large crowd at the House of Blues in Orlando, FL."
-            className="rounded-2xl"
-          >
-          </Img>
-        </OpenImgContextProvider>
+        <img src={houseOfBlues} className="rounded-2xl" alt="Band performing in front of a large crowd at the House of Blues in Orlando, FL."></img>
         </div>
         <div className="text-base font-normal w-full pl-0 xl:pl-8 xl:py-4 xl:w-2/3">
           <h2 className="text-left pb-4 text-4xl font-bold">Notable Performances</h2>

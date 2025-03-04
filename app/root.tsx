@@ -1,6 +1,5 @@
 import {
 	data,
-	Link,
 	Links,
 	Meta,
 	Outlet,
