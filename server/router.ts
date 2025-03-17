@@ -16,7 +16,7 @@ router.get('/events', async (req, res) => {
   } else {
     const events = await getEvents();
 
-    const ttl = 1000 * 60 * 60; // 1 hour
+    const ttl = 1000 * 60 * 10; // 1 hour
     cache.put('events', events, ttl);
 
     res.send(events);
