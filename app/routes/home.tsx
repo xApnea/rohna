@@ -67,16 +67,16 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
       <section className="bg-[url('../assets/images/bandPrism.jpg')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
         <div id="hero" className="mx-auto pt-48 md:pt-80 bg-gradient-to-b from-green/60 via-transparent to-green to-95%">
           <div className="flex flex-col gap-6 justify-end items-center mt-36 mx-auto md:mt-80 2xl:mt-96">
-            <h2 className="text-white md:text-2xl">New single &quot;Don&apos;t Come Down&quot; available now</h2>
+            <h2 className="text-white md:text-2xl">New single &quot;Runnin&apos; Out Of Remedies&quot; available now</h2>
             <span className="relative inline-flex">
-              <button className="text-white text-center uppercase font-bold text-xl px-24 py-4 md:text-3xl md:py-4 md:px-36 rounded-2xl bg-orange transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/50  hover:shadow-lg hover:scale-105" type="submit" onClick={() => { location.href = 'https://rohnamusic.tunelink.to/dont-come-down'; }}>Listen Here</button>
+              <button className="text-white text-center uppercase font-bold text-xl px-24 py-4 md:text-3xl md:py-4 md:px-36 rounded-2xl bg-orange transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/50  hover:shadow-lg hover:scale-105" type="submit" onClick={() => { location.href = 'https://rohna.tunelink.to/runnin-out-of-remedies'; }}>Listen Here</button>
             </span>
             <div className="flex flex-row justify-center items-center gap-4"><SocialIcons size="xl"/></div>
           </div>
         </div>
       </section>
       <section id="newRelease" className="bg-green flex flex-col items-center py-8 md:py-10 animate-[fadeIn_2s;]">
-        <h2 className="text-white text-center py-10 text-5xl font-bold uppercase">New Release</h2>
+        <h2 className="text-white text-center py-10 text-5xl font-bold uppercase">Latest Music Video</h2>
         <YoutubeEmbed url={'M-ZrIAOr4Tw?si=Xh4lIM_j_d4rHrN0'}/>
       </section>
       <section id="tour" className="bg-green flex flex-col items-center py-8 md:py-10 animate-[fadeIn_2s;]">
