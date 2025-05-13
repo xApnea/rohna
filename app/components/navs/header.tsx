@@ -22,9 +22,9 @@ export default function Header({ onHomePage = false}) {
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
           to={'shows'}
         >SHOWS</NavLink>
-        {/* <Link className='hidden lg:block transition-all duration-150 ease-in-out hover:scale-105'
-          to={'https://rohna-online-store.myshopify.com/'} viewTransition
-        >MERCH</Link> */}
+        <Link className='hidden lg:block transition-all duration-150 ease-in-out hover:scale-105'
+          to={'https://shop.rohnamusic.com/'} viewTransition
+        >MERCH</Link>
         <NavLink
           className={({ isActive, isPending }) => isActive ? "active hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : isPending ? "pending hidden lg:block transition-all duration-150 ease-in-out hover:scale-105" : "hidden lg:block transition-all duration-150 ease-in-out hover:scale-105"}
           to={'about'} viewTransition
@@ -53,12 +53,12 @@ export default function Header({ onHomePage = false}) {
             viewTransition
             onClick={() => setIsMenuOpen(false)}
           >SHOWS</NavLink>
-          {/* <Link
+          <Link
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
-            to={'https://rohna-online-store.myshopify.com/'}
+            to={'https://shop.rohnamusic.com'}
             viewTransition
             onClick={() => setIsMenuOpen(false)}
-          >MERCH</Link> */}
+          >MERCH</Link>
           <NavLink
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"
             to={'about'}
