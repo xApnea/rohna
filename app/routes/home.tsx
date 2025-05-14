@@ -11,6 +11,7 @@ import YoutubeEmbed from "#app/components/youtubeEmbed.tsx";
 import crowbar01 from '../assets/images/crowbar01.jpg'
 import crowbar02 from '../assets/images/crowbar02.jpg'
 import crowbarHuddle from '../assets/images/crowbarHuddle.jpg'
+import merchSpread from '../assets/images/fullMerchSpread.png'
 
 import { type Route } from './+types/home.ts'
 
@@ -82,6 +83,19 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
       <section id="tour" className="bg-green flex flex-col items-center py-8 md:py-10 animate-[fadeIn_2s;]">
         <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Tour Dates</h2>
         <TourDateTable events={events}/>
+      </section>
+      <section id="merch" className="bg-green flex flex-col items-center py-8 md:py-12">
+        <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Merch</h2>
+        <div className="flex flex-col gap-6 justify-center items-center">
+          <img
+            className="object-contain rounded-2xl w-1/3 cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
+            src={merchSpread}
+            alt="A display of band merchandise including a vinyl record, shirt, tote bag, hat, and hoodie."
+            onClick={() => { location.href = 'https://shop.rohnamusic.com'; }}>
+          </img>
+          <button className="text-white text-center uppercase font-bold text-xl px-24 py-4 md:text-3xl md:py-4 md:px-36 rounded-2xl bg-orange transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/50  hover:shadow-lg hover:scale-105" type="submit" onClick={() => { location.href = 'https://shop.rohnamusic.com'; }}>Shop Here</button>
+
+        </div>
       </section>
       <section id="gallery" className="bg-[url('../assets/images/albumArt.jpg')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
