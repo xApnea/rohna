@@ -11,6 +11,7 @@ import YoutubeEmbed from "#app/components/youtubeEmbed.tsx";
 import crowbar01 from '../assets/images/crowbar01.jpg'
 import crowbar02 from '../assets/images/crowbar02.jpg'
 import crowbarHuddle from '../assets/images/crowbarHuddle.jpg'
+import merchSpread from '../assets/images/fullMerchSpread.png'
 
 import { type Route } from './+types/home.ts'
 
@@ -83,15 +84,28 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
         <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Tour Dates</h2>
         <TourDateTable events={events}/>
       </section>
+      <section id="merch" className="bg-green flex flex-col items-center py-8 md:py-12">
+        <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Merch</h2>
+        <div className="flex flex-col gap-6 justify-center items-center mx-4">
+          <img
+            className="object-contain rounded-2xl w-5/6 lg:w-2/3 xl:w-1/3 cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
+            src={merchSpread}
+            alt="A display of band merchandise including a vinyl record, shirt, tote bag, hat, and hoodie."
+            onClick={() => { location.href = 'https://shop.rohnamusic.com'; }}>
+          </img>
+          <button className="text-white text-center uppercase font-bold text-xl px-24 py-4 md:text-3xl md:py-4 md:px-36 rounded-2xl bg-orange transition-all duration-300 ease-in-out shadow-none hover:shadow-orange/50  hover:shadow-lg hover:scale-105" type="submit" onClick={() => { location.href = 'https://shop.rohnamusic.com'; }}>Shop Here</button>
+
+        </div>
+      </section>
       <section id="gallery" className="bg-[url('../assets/images/albumArt.jpg')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
-          <div className="sm:col-span-2 sm:mb-8 lg:w-2/3">
+          <div className="sm:col-span-2 sm:mb-8 xl:w-2/3">
           <img className="object-contain rounded-2xl" src={crowbarHuddle} alt="The band huddled around the drumkit right before a performance."></img>
           </div>
-          <div className="sm:col-span-2 sm:mt-8 lg:w-2/3 rounded-2xl">
+          <div className="sm:col-span-2 sm:mt-8 xl:w-2/3 rounded-2xl">
           <img className="object-contain rounded-2xl" src={crowbar02} alt="Shot from behind the stage of the band performing."></img>
           </div>
-          <div className="sm:col-span-4 sm:mx-12 lg:w-1/2 rounded-2xl">
+          <div className="sm:col-span-4 sm:mx-12 xl:w-1/2 rounded-2xl">
           <img className="object-contain rounded-2xl" src={crowbar01} alt="The band in front of a crowd performing, bass player Andres is headbanging."></img>
           </div>
         </div>
