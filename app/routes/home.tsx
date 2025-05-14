@@ -86,9 +86,9 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
       </section>
       <section id="merch" className="bg-green flex flex-col items-center py-8 md:py-12">
         <h2 className="text-white text-center pb-10 text-5xl font-bold uppercase">Merch</h2>
-        <div className="flex flex-col gap-6 justify-center items-center">
+        <div className="flex flex-col gap-6 justify-center items-center mx-4">
           <img
-            className="object-contain rounded-2xl w-1/3 cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
+            className="object-contain rounded-2xl w-5/6 lg:w-2/3 xl:w-1/3 cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
             src={merchSpread}
             alt="A display of band merchandise including a vinyl record, shirt, tote bag, hat, and hoodie."
             onClick={() => { location.href = 'https://shop.rohnamusic.com'; }}>
@@ -99,13 +99,13 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
       </section>
       <section id="gallery" className="bg-[url('../assets/images/albumArt.jpg')] bg-cover bg-center bg-no-repeat py-8 md:py-10 px-4 md:px-24">
         <div className="flex flex-col justify-center gap-8 sm:grid sm:grid-cols-4 sm:justify-items-center sm:place-content-center">
-          <div className="sm:col-span-2 sm:mb-8 lg:w-2/3">
+          <div className="sm:col-span-2 sm:mb-8 xl:w-2/3">
           <img className="object-contain rounded-2xl" src={crowbarHuddle} alt="The band huddled around the drumkit right before a performance."></img>
           </div>
-          <div className="sm:col-span-2 sm:mt-8 lg:w-2/3 rounded-2xl">
+          <div className="sm:col-span-2 sm:mt-8 xl:w-2/3 rounded-2xl">
           <img className="object-contain rounded-2xl" src={crowbar02} alt="Shot from behind the stage of the band performing."></img>
           </div>
-          <div className="sm:col-span-4 sm:mx-12 lg:w-1/2 rounded-2xl">
+          <div className="sm:col-span-4 sm:mx-12 xl:w-1/2 rounded-2xl">
           <img className="object-contain rounded-2xl" src={crowbar01} alt="The band in front of a crowd performing, bass player Andres is headbanging."></img>
           </div>
         </div>
