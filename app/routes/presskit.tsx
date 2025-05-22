@@ -59,9 +59,9 @@ export default function PressKit() {
                 </a>
                 <div className="flex flex-col justify-end h-full gap-1">
                   <h4 className="font-normal text-base">Followers</h4>
-                  <p className="font-bold text-5xl">5400+</p>
+                  <p className="font-bold text-5xl">5700+</p>
                   <h4 className="font-normal text-base">“Nowhere Else to Go”</h4>
-                  <p className="font-bold text-5xl">700k+</p>
+                  <p className="font-bold text-5xl">720k+</p>
                   <h4 className="font-normal text-base">“Blood Moon”</h4>
                   <p className="font-bold text-5xl">150k+</p>
                 </div>
@@ -76,7 +76,7 @@ export default function PressKit() {
                 <div className="flex flex-col justify-end h-full gap-1">
                   <h3 className="sr-only">Instagram</h3>
                     <h4 className="font-normal text-base">Followers</h4>
-                    <p className="font-bold text-5xl">8500+</p>
+                    <p className="font-bold text-5xl">9000+</p>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function PressKit() {
                     <h4 className="font-light text-base">Followers</h4>
                     <p className="font-bold text-5xl">10k+</p>
                     <h4 className="font-normal text-base">Likes</h4>
-                    <p className="font-bold text-5xl">620k+</p>
+                    <p className="font-bold text-5xl">630k+</p>
                 </div>
               </div>
             </div>
