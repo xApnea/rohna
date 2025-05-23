@@ -1,6 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-orange: #b94e10;
+  --color-orange-light: #ed732c;
+  --color-white: #f9f5e6;
+  --color-black: #280004;
+  --color-brown: #302b28;
+  --color-green: #38564b;
+  --color-green-light: #466c5e;
+
+  --font-sans: Archivo, Archivo Fallback;
+
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes grow {
+    0% {
+      scale: 0;
+    }
+    100% {
+      scale: 100%;
+    }
+  }
+  @keyframes halfSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 html,
 body {
@@ -16,5 +76,5 @@ body {
 
 .pending {
   @apply text-white/50;
-  @apply blur-sm;
+  @apply blur-xs;
 }

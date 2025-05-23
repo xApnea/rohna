@@ -45,7 +45,7 @@ export default function Header({ onHomePage = false}) {
           }
         </button>
 
-        <div className={`text-2xl sm:text-3xl absolute w-full z-20 lg:hidden top-[55px] md:top-[107px] left-0 h-svh py-4 md:py-8 bg-gradient-to-b from-green to-green/95 flex-col items-center gap-6 md:gap-8 ${isMenuOpen ? 'flex origin-top animate-[grow_.3s;]' : 'hidden'}`}
+        <div className={`text-2xl sm:text-3xl absolute w-full z-20 lg:hidden top-[55px] md:top-[107px] left-0 h-svh py-4 md:py-8 bg-linear-to-b from-green to-green/95 flex-col items-center gap-6 md:gap-8 ${isMenuOpen ? 'flex origin-top animate-[grow_.3s;]' : 'hidden'}`}
         onClick={() => setIsMenuOpen(false)}>
           <NavLink
             className="lg:hidden transition-all duration-150 ease-in-out hover:scale-105"

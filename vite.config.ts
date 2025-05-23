@@ -1,6 +1,7 @@
 import { reactRouter } from '@react-router/dev/vite'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 import { reactRouterDevTools } from 'react-router-devtools'
+import tailwindcss from "@tailwindcss/vite";
 import { type UserConfig } from 'vite'
 
 import { envOnlyMacros } from 'vite-env-only'
@@ -32,6 +33,7 @@ export default {
 		envOnlyMacros(),
 		reactRouterDevTools(),
 		reactRouter(),
+		tailwindcss(),
 		process.env.SENTRY_AUTH_TOKEN
 			? sentryVitePlugin({
 					disable: MODE !== 'production',

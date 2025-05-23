@@ -13,7 +13,7 @@ export default function MailingListForm({ actionData }: any) {
                 placeholder="email@example.com"
                 type="email"
                 autoComplete="email"
-                className="text-lg text-center w-full p-2 rounded-xl bg-white/10 outline-2 outline-white placeholder-white/50 hover:bg-white/20 transition-all duration-300 ease-in-out shadow-none hover:shadow-black/20 hover:shadow-md"
+                className="text-lg text-center w-full p-2 rounded-xl bg-white/10 focus:outline-2 focus:outline-white placeholder-white/50 hover:bg-white/20 transition-shadow transition-color duration-300 ease-in-out shadow-none hover:shadow-black/20 hover:shadow-md"
               />
             </label>
           </div>

@@ -66,7 +66,7 @@ export default function Home({ loaderData, actionData }: Route.ComponentProps) {
       <Header onHomePage={true}/>
       <h1 className="sr-only">Home</h1>
       <section className="bg-[url('../assets/images/bandPrism.jpg')] bg-cover bg-top bg-no-repeat md:bg-center animate-[fadeIn_2s;]">
-        <div id="hero" className="mx-auto pt-48 md:pt-80 bg-gradient-to-b from-green/60 via-transparent to-green to-95%">
+        <div id="hero" className="mx-auto pt-48 md:pt-80 bg-linear-to-b from-green/60 via-transparent to-green to-95%">
           <div className="flex flex-col gap-6 justify-end items-center mt-36 mx-auto md:mt-80 2xl:mt-96">
             <h2 className="text-white md:text-2xl">New single &quot;You&apos;d Kill Anything&quot; available now</h2>
             <span className="relative inline-flex">
