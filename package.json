@@ -63,7 +63,7 @@
     "morgan": "^1.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.1.5",
+    "react-router": "^7.6.0",
     "remix-utils": "^8.1.0",
     "source-map-support": "^0.5.21",
     "spin-delay": "^2.0.1",
@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "@epic-web/config": "^1.16.5",
-    "@react-router/dev": "^7.1.5",
+    "@react-router/dev": "^7.6.0",
     "@sentry/vite-plugin": "^3.1.2",
     "@sly-cli/sly": "^1.14.0",
     "@types/bcryptjs": "^2.4.6",
