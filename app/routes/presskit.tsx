@@ -104,12 +104,12 @@ export default function PressKit() {
           </div>
         </div>
       </section>
-      <section id="performances" className="py-16 mx-2 md:mx-8 flex flex-col xl:flex-row justify-evenly items-center">
-        <div className="hidden xl:block xl:w-1/4">
-        <img src={houseOfBlues} className="rounded-2xl" alt="Band performing in front of a large crowd at the House of Blues in Orlando, FL."></img>
+      <section id="performances" className=" 2xl:min-h-fit py-16 mx-4 md:mx-8 flex flex-col xl:flex-row xl:justify-evenly">
+        <div className="hidden xl:block xl:w-1/4 xl:self-center">
+          <img src={houseOfBlues} className="rounded-2xl" alt="Band performing in front of a large crowd at the House of Blues in Orlando, FL."></img>
         </div>
-        <div className="text-base font-normal w-full pl-0 xl:pl-8 xl:py-4 xl:w-2/3">
-          <h2 className="text-left pb-4 text-4xl font-bold">Notable Performances</h2>
+        <div className="self-start text-base font-normal w-full pl-0 xl:pl-8 xl:py-4 xl:w-2/3">
+          <h2 className="text-center xl:text-left pb-4 text-4xl font-bold">Notable Performances</h2>
           <Performances />
         </div>
       </section>
