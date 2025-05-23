@@ -1,5 +1,6 @@
 import { reactRouter } from '@react-router/dev/vite'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
+import { reactRouterDevTools } from 'react-router-devtools'
 import { type UserConfig } from 'vite'
 
 import { envOnlyMacros } from 'vite-env-only'
@@ -29,6 +30,7 @@ export default {
 	},
 	plugins: [
 		envOnlyMacros(),
+		reactRouterDevTools(),
 		reactRouter(),
 		process.env.SENTRY_AUTH_TOKEN
 			? sentryVitePlugin({
